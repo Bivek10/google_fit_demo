@@ -8,4 +8,13 @@ class AppFlyerServices {
     disableAdvertisingIdentifier: false, // Optional field
     disableCollectASA: false,
   );
+  AppsflyerSdk? appsflyerSdk;
+
+  initAppFlyer() {
+    appsflyerSdk = AppsflyerSdk(appsFlyerOptions);
+    appsflyerSdk!.initSdk(
+        registerConversionDataCallback: true,
+        registerOnAppOpenAttributionCallback: true,
+        registerOnDeepLinkingCallback: true);
+  }
 }
