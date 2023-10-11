@@ -10,11 +10,13 @@ class AppFlyerServices {
   );
   AppsflyerSdk? appsflyerSdk;
 
-  initAppFlyer() {
+  AppsflyerSdk initAppFlyer() {
     appsflyerSdk = AppsflyerSdk(appsFlyerOptions);
     appsflyerSdk!.initSdk(
         registerConversionDataCallback: true,
         registerOnAppOpenAttributionCallback: true,
         registerOnDeepLinkingCallback: true);
+
+    return appsflyerSdk!;
   }
 }
