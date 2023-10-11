@@ -19,4 +19,12 @@ class AppFlyerServices {
 
     return appsflyerSdk!;
   }
+
+  Future<bool?> logEvent(String eventName, Map? eventValues) async {
+    bool? result;
+    try {
+      result = await appsflyerSdk!.logEvent(eventName, eventValues);
+    } on Exception catch (e) {}
+    print("Result logEvent: $result");
+  }
 }
